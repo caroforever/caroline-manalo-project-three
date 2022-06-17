@@ -1,10 +1,11 @@
 const LoggedEntries = (props) => {
-    console.log(props)
+    // console.log("LoggedEntries.js has rendered")
+    // console.log(props)
     return (
         <>
         <li>
             <p>{props.entryName}</p>
-            <button onClick={ props.handleBurn }> Burn entry</button>
+            <button onClick={ () => { props.handleBurn( props.id) } }> Burn entry </button>
         </li>
         </>
     )
