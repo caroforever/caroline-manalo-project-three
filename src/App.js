@@ -62,53 +62,76 @@ function App() {
       // console.log(burnEntry);
     }
   
+  //   componentDidUpdate(prevProps) {
+  // // `formVisible` went from false -> true, scroll the <form> into view
+  // if (!prevProps.formVisible && this.props.formVisible) {
+  //   this.formRef.current.scrollIntoView();
 
   return (
-
     <div className="App"> 
       <header className="appHeader">
-        <h1>Morning Pages</h1>
-        <p>An adaptation of a writing exercise from “The Artist’s Way” by Julia Cameron.  Morning Pages was created as a daily writing ritual; every morning, you write everything that's clogging your headspace.</p>
-
-        <p>This exercise aims to “empty the mind"-- a brain cleanse, thus ushering more room for clarity.</p>
-        <p>Once your entry is submitted, you are welcome to burn the entry.</p>
+        <div className="borderWrapper">
+          <h1><span className="headerSpan1">Morning</span><span className="headerSpan2"> Pages</span></h1>
+        </div>
+        <div className="headerTextContainer">
+          <div className="textContainer">
+            <p>An adaptation of a writing exercise from “The Artist’s Way” by Julia Cameron.</p> 
+          </div>
+          <div className="textContainer"> <p> Every morning, write out an unfiltered stream of consciousness in the text box below.</p>
+          </div>
+          <div className="textContainer"><p>Any thought that bubbles up is written down with no judgement.</p></div>
+          <div className="textContainer">
+            <p>The aim is to “empty the mind". The result offers more room for a clarity within your headspace.</p>
+          </div>
+          <div className="textContainer">
+            <p>Once your entry is submitted, you may opt to burn your entry.</p>
+          </div>
+        </div>
       </header>
-
       <main>
-        <section className="">
-          <form action="submit">
-            <label htmlFor="newEntry">Type your stream of consciousness here:</label>
+        <section className="entryForm">
+          <div className="formWrapper">
+            <div className="formContainer">
+              <form className="form"action="submit">
+                <label htmlFor="newEntry">To begin, type your stream of consciousness here:</label>
+              </form>
+            </div>
             <textarea
-                rows="10"
-                placeholder="Brain cleanse"
+                rows="3"
+                placeholder=""
                 id="newEntry"
                 onChange={ handleInputChange }
                 value={userEntry}
-            ></textarea>
-          </form>
-          <button onClick={ handleSubmit } disabled={!userEntry}> Submit my entry </button>
+                >
+                </textarea>
+            <div className="formButton">
+              <button className="submitEntry" onClick={ handleSubmit } disabled={!userEntry}> Submit my entry </button>
+            </div>
+          </div>
         </section>
-        <section>
-          <h2>Burn Queue</h2>
-            <ul>
-              {entry.map( (entry) => {
-                
-                return (
-                  <LoggedEntries 
-                  key={entry.key} 
-                  id={entry.key}
-                  entryName={entry.name}
-
-                  handleBurn={ handleBurn }
-                  />
-                )
-              })}
-            </ul>
+        <section className="burnQueue">
+            <div className="burnHeaderContainer">
+            <h2>Burn Queue</h2>
+            </div>
+            <div className="wrapper">
+              <ul className="allEntries">
+                {entry.map( (entry) => {
+                  return (
+                    <LoggedEntries 
+                    key={entry.key} 
+                    id={entry.key}
+                    entryName={entry.name}
+                    handleBurn={ handleBurn }
+                    />
+                  )
+                })}
+              </ul>
+          </div>
         </section>
-
-
-
       </main>
+      <footer>
+        <p>Created at Juno College by Caroline Manalo </p>
+      </footer>
     </div>
   );
 }
