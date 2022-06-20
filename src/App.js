@@ -3,6 +3,7 @@ import firebase from './firebase';
 import { useEffect, useState } from 'react';
 import { getDatabase, ref, onValue, push, remove} from 'firebase/database';
 import LoggedEntries from './LoggedEntries';
+import Birds from './assets/birds.mp3';
 
 function App() {
   // console.log("App has rendered")
@@ -10,6 +11,7 @@ function App() {
   const [entry, setEntry] = useState([]);
   // Initialize state to receive new entries from users.
   const [userEntry, setUserEntry] = useState("");
+
   // console.log(entry);
   // call to Firebase
   useEffect(() => {
@@ -62,17 +64,19 @@ function App() {
       // console.log(burnEntry);
     }
   
-  //   componentDidUpdate(prevProps) {
-  // // `formVisible` went from false -> true, scroll the <form> into view
-  // if (!prevProps.formVisible && this.props.formVisible) {
-  //   this.formRef.current.scrollIntoView();
+  
 
   return (
     <div className="App"> 
       <header className="appHeader">
         <div className="borderWrapper">
           <h1><span className="headerSpan1">Morning</span><span className="headerSpan2"> Pages</span></h1>
+          <div className="audioContainer">
+          <button data-key="birds">test</button>
+          <audio data-key="birds" src="./assets/birds.mp3"></audio>
         </div>
+        </div>
+        
         <div className="headerTextContainer">
           <div className="textContainer">
             <p>An adaptation of a writing exercise from “The Artist’s Way” by Julia Cameron.</p> 
@@ -111,7 +115,7 @@ function App() {
         </section>
         <section className="burnQueue">
             <div className="burnHeaderContainer">
-            <h2>Burn Queue</h2>
+              <h2>Burn Queue</h2>
             </div>
             <div className="wrapper">
               <ul className="allEntries">

@@ -99,6 +99,8 @@ h1 {
   animation: fade-in 0.9s 0.2s forwards cubic-bezier(0.11, 0, 0.5, 0);
 }
 
+
+
 @keyframes fade-in {
   100% {
     opacity: 1;
@@ -129,6 +131,8 @@ h1 {
 .borderWrapper:hover {
   background: white;
 }
+
+
 
 .headerTextContainer {
   display: flex;
@@ -240,6 +244,9 @@ textarea:hover {
   background: rgba(255, 255, 255);
 }
 
+label {
+  font-size: 0.8rem;
+}
 
 .postedEntry {
   background: rgba(255, 255, 255, 0.4);
@@ -287,7 +294,6 @@ button {
   align-content: flex-start;
 }
 
-
 footer {
   border: 1px solid black;
   background: rgba(255, 255, 255, 0.4);
@@ -296,9 +302,30 @@ footer {
   width: 90%;
   margin: 0 auto;
   margin-top: 20px;
+  margin-bottom: 20px;
 }
 /* Media Queries */
 
 
+@media (max-width: 900px) {
+  .headerTextContainer {
+      display: flex;
+      flex-direction: column;
+    }
+  
+    .textContainer {
+      width: 100%;
+    }
+}
 
+@media (max-width: 320px) {
+  .headerTextContainer {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .textContainer {
+    width: 100%;
+  }
+}
 

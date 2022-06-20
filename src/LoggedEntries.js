@@ -6,7 +6,7 @@ const LoggedEntries = (props) => {
         <>
                 <li class="postedEntry">
                     <p>{props.entryName}</p>
-                    <button className="burnButton" onClick={ () => { props.handleBurn( props.id) } }> Burn entry </button>
+                    <button className="burnButton" onClick={ () => { props.handleBurn( props.id, props.focusEntry) }  }> Burn entry </button>
                 </li>
         </>
     )
