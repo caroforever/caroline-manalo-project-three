@@ -15,8 +15,6 @@ img {display: block; height: auto; width: 100%;}
   text-align: center;
 }
 
-/* BASE STYLES */
-
 html {
   font-size: 125%;
   scroll-behavior: smooth;
@@ -99,8 +97,6 @@ h1 {
   animation: fade-in 0.9s 0.2s forwards cubic-bezier(0.11, 0, 0.5, 0);
 }
 
-
-
 @keyframes fade-in {
   100% {
     opacity: 1;
@@ -111,7 +107,6 @@ h1 {
 .borderWrapper {
   padding: 20px;
   margin: 0 auto;
-  /* width: 90%; */
   width: 70%;
   border: 1px solid black;
   background: rgba(255, 255, 255, 0.4);
@@ -133,8 +128,6 @@ h1 {
 .borderWrapper:hover {
   background: white;
 }
-
-
 
 .headerTextContainer {
   display: flex;
@@ -168,7 +161,6 @@ h1 {
 .formWrapper {
   padding: 20px;
   margin: 0 auto;
-  /* width: 90%; */
   width: 70%;
   background: rgba(255, 255, 255, 0.5);
   border: 1px solid black;
@@ -198,7 +190,6 @@ textarea {
   border-radius: 5px;
   resize: none;
   background: rgba(255, 255, 255, 0.7);
-  /* width: 90%; */
   width: 70%;
   margin-top: 20px;
   transition: 0.7s;
@@ -239,7 +230,6 @@ textarea:hover {
   padding-left: 20px;
   font-size: 0.8rem;
   background: rgba(255, 255, 255, 0.6);
-  /* width: 90%; */
   width: 70%;
   margin-bottom: 20px;
   border-radius: 5px;
@@ -261,7 +251,6 @@ label {
   border: 1px solid black;
   margin-top: 10px;
   font-size: 0.8rem;
-  /* width: 90%; */
   width: 70%;
   border-radius: 5px;
   transition: 0.7s;
@@ -306,7 +295,6 @@ footer {
   background: rgba(255, 255, 255, 0.4);
   transition: 0.7s;
   border-radius: 5px;
-  /* width: 90%; */
   width: 70%;
   margin: 0 auto;
   margin-top: 20px;
