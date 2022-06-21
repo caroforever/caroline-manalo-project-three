@@ -111,7 +111,8 @@ h1 {
 .borderWrapper {
   padding: 20px;
   margin: 0 auto;
-  width: 90%;
+  /* width: 90%; */
+  width: 70%;
   border: 1px solid black;
   background: rgba(255, 255, 255, 0.4);
   transition: 0.7s;
@@ -121,7 +122,8 @@ h1 {
 .wrapper {
   padding: 20px;
   margin: 0 auto;
-  width: 90%;
+  /* width: 90%; */
+  width: 70%;
   border: 1px solid black;
   border-radius: 5px;
   background: rgba(255, 255, 255, 0.4);
@@ -136,7 +138,8 @@ h1 {
 
 .headerTextContainer {
   display: flex;
-  width: 90%;
+  /* width: 90%; */
+  width: 70%;
   margin: 0 auto;
   margin-top: 10px;
   gap: 10px;
@@ -165,7 +168,8 @@ h1 {
 .formWrapper {
   padding: 20px;
   margin: 0 auto;
-  width: 90%;
+  /* width: 90%; */
+  width: 70%;
   background: rgba(255, 255, 255, 0.5);
   border: 1px solid black;
   border-radius: 5px;
@@ -194,7 +198,8 @@ textarea {
   border-radius: 5px;
   resize: none;
   background: rgba(255, 255, 255, 0.7);
-  width: 90%;
+  /* width: 90%; */
+  width: 70%;
   margin-top: 20px;
   transition: 0.7s;
   font-size: 0.8rem;
@@ -234,7 +239,8 @@ textarea:hover {
   padding-left: 20px;
   font-size: 0.8rem;
   background: rgba(255, 255, 255, 0.6);
-  width: 90%;
+  /* width: 90%; */
+  width: 70%;
   margin-bottom: 20px;
   border-radius: 5px;
   transition: 0.7s;
@@ -255,21 +261,22 @@ label {
   border: 1px solid black;
   margin-top: 10px;
   font-size: 0.8rem;
-  width: 90%;
+  /* width: 90%; */
+  width: 70%;
   border-radius: 5px;
-  transition: 0.7s
-
+  transition: 0.7s;
 }
 
 .postedEntry:hover {
   background: rgba(255, 255, 255, 0.9);
-
 }
 
 button {
   text-transform: uppercase;
   border-radius: 5px;
+  padding: 5px 0px 2px 0px;
 }
+
 .burnButton {
   width: 140px;
   height: 40px;
@@ -299,13 +306,19 @@ footer {
   background: rgba(255, 255, 255, 0.4);
   transition: 0.7s;
   border-radius: 5px;
-  width: 90%;
+  /* width: 90%; */
+  width: 70%;
   margin: 0 auto;
   margin-top: 20px;
   margin-bottom: 20px;
+  font-size: 0.8rem;
 }
-/* Media Queries */
 
+.footerLink {
+  text-decoration: underline 1px dotted;
+}
+
+/* Media Queries */
 
 @media (max-width: 900px) {
   .headerTextContainer {

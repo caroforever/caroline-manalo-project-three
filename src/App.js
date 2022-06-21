@@ -9,73 +9,53 @@ function App() {
   const [entry, setEntry] = useState([]);
   const [userEntry, setUserEntry] = useState("");
   const scrollToEntry = useRef();
-  
 
   
+  
   useEffect(() => {
-    // this variable holds firebase details
     const database = getDatabase(firebase)
-    // references my database
     const dbRef = ref(database)
 
     onValue(dbRef, (response) => {
-      // console.log(response.val());
-      // defining the variable that will store the new state
       const newState = [];
-      // store the response from our call to firebase inside a variable
       const data = response.val();
       
       for (let key in data) {
-        // for in to push the entries to the newState empty array
         newState.push(
           {
             key: key,
             name: data[key]
           });
       }
-      // console.log(newState)
       setEntry(newState);
     })
 
   }, [])
 
-  // Submit entry
     const handleSubmit = (event) => {
       event.preventDefault();
       const database = getDatabase(firebase)
       const dbRef = ref(database);
       push(dbRef, userEntry);
-
       scrollToEntry.current.scrollIntoView();
       setUserEntry("");
     }
 
-  // Handling input change
     const handleInputChange = (event) => {
       setUserEntry(event.target.value);
-      // console.log(event)
-      // console.log(event.target.value)
     }
 
-  // Handling delete entry
     const handleBurn = (burnEntry) => {
       const database = getDatabase(firebase)
       const dbRef = ref(database, `${burnEntry}`);
       remove(dbRef);
-      // console.log(burnEntry);
     }
   
-  
-
   return (
     <div className="App"> 
       <header className="appHeader">
         <div className="borderWrapper">
           <h1><span className="headerSpan1">Morning</span><span className="headerSpan2"> Pages</span></h1>
-          {/* <div className="audioContainer">
-          <button data-key="birds">test</button>
-          <audio data-key="birds" src="./assets/birds.mp3"></audio>
-        </div> */}
         </div>
         
         <div className="headerTextContainer">
@@ -86,7 +66,7 @@ function App() {
           </div>
           <div className="textContainer"><p>Any thought that bubbles up is written down with no judgement.</p></div>
           <div className="textContainer">
-            <p>The aim is to “empty the mind". The result offers more room for a clarity within your headspace.</p>
+            <p>The aim is to “empty the mind". The result offers more room for clarity within your headspace.</p>
           </div>
           <div className="textContainer">
             <p>Once your entry is submitted, you may opt to burn your entry.</p>
@@ -137,7 +117,7 @@ function App() {
         </section>
       </main>
       <footer>
-        <p>Created at Juno College by Caroline Manalo </p>
+        <p>Created at Juno College by <a href="https://carolinemanalo.com" className="footerLink" target="_blank" rel="noreferrer noopener">Caroline Manalo</a> </p>
       </footer>
     </div>
   );
