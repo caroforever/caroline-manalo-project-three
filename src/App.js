@@ -6,17 +6,12 @@ import LoggedEntries from './LoggedEntries';
 // import Birds from './assets/birds.mp3';
 
 function App() {
-  // console.log("App has rendered")
-  // Initalize state to store morning pages in an empty array
   const [entry, setEntry] = useState([]);
-  // Initialize state to receive new entries from users.
   const [userEntry, setUserEntry] = useState("");
- 
   const scrollToEntry = useRef();
   
 
-  // console.log(entry);
-  // call to Firebase
+  
   useEffect(() => {
     // this variable holds firebase details
     const database = getDatabase(firebase)
@@ -53,7 +48,6 @@ function App() {
 
       scrollToEntry.current.scrollIntoView();
       setUserEntry("");
-    
     }
 
   // Handling input change
@@ -117,10 +111,10 @@ function App() {
                 </textarea>
             <div className="formButton">
               <button className="submitEntry" onClick={ handleSubmit } disabled={!userEntry}> Submit my entry </button>
-              
             </div>
           </div>
         </section>
+
         <section className="burnQueue">
             <div className="burnHeaderContainer">
               <h2>Burn Queue</h2>
