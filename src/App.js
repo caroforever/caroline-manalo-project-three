@@ -1,9 +1,9 @@
 import './App.css';
 import firebase from './firebase';
-import { useEffect, useState } from 'react';
-import { getDatabase, ref, onValue, push, remove} from 'firebase/database';
+import { useEffect, useState, useRef } from 'react';
+import { getDatabase, ref, onValue, push, remove } from 'firebase/database';
 import LoggedEntries from './LoggedEntries';
-import Birds from './assets/birds.mp3';
+// import Birds from './assets/birds.mp3';
 
 function App() {
   // console.log("App has rendered")
@@ -11,6 +11,9 @@ function App() {
   const [entry, setEntry] = useState([]);
   // Initialize state to receive new entries from users.
   const [userEntry, setUserEntry] = useState("");
+ 
+  const scrollToEntry = useRef();
+  
 
   // console.log(entry);
   // call to Firebase
@@ -41,22 +44,26 @@ function App() {
 
   }, [])
 
-  // Event handlers
+  // Submit entry
     const handleSubmit = (event) => {
-    event.preventDefault();
-    const database = getDatabase(firebase)
-    const dbRef = ref(database);
+      event.preventDefault();
+      const database = getDatabase(firebase)
+      const dbRef = ref(database);
+      push(dbRef, userEntry);
 
-    push(dbRef, userEntry);
-    setUserEntry("");
+      scrollToEntry.current.scrollIntoView();
+      setUserEntry("");
+    
     }
 
+  // Handling input change
     const handleInputChange = (event) => {
       setUserEntry(event.target.value);
       // console.log(event)
       // console.log(event.target.value)
     }
 
+  // Handling delete entry
     const handleBurn = (burnEntry) => {
       const database = getDatabase(firebase)
       const dbRef = ref(database, `${burnEntry}`);
@@ -71,10 +78,10 @@ function App() {
       <header className="appHeader">
         <div className="borderWrapper">
           <h1><span className="headerSpan1">Morning</span><span className="headerSpan2"> Pages</span></h1>
-          <div className="audioContainer">
+          {/* <div className="audioContainer">
           <button data-key="birds">test</button>
           <audio data-key="birds" src="./assets/birds.mp3"></audio>
-        </div>
+        </div> */}
         </div>
         
         <div className="headerTextContainer">
@@ -110,6 +117,7 @@ function App() {
                 </textarea>
             <div className="formButton">
               <button className="submitEntry" onClick={ handleSubmit } disabled={!userEntry}> Submit my entry </button>
+              
             </div>
           </div>
         </section>
@@ -126,6 +134,7 @@ function App() {
                     id={entry.key}
                     entryName={entry.name}
                     handleBurn={ handleBurn }
+                    scrollToEntry={ scrollToEntry }
                     />
                   )
                 })}
