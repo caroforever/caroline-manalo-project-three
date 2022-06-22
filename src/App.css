@@ -319,14 +319,75 @@ footer {
     }
 }
 
+@media (max-width: 480px) {
+  .headerTextContainer {
+      display: flex;
+      flex-direction: column;
+      width: 90%;
+    }
+  
+    .textContainer {
+      width: 100%;
+    }
+  
+    .formWrapper {
+      width: 90%;
+    }
+  
+    .borderWrapper {
+      width: 90%;
+    }
+  
+    .wrapper {
+      width: 90%;
+    }
+  
+    .burnHeaderContainer {
+      width: 90%;
+    }
+  
+    .postedEntry {
+      width: 90%;
+    }
+  
+    textarea {
+      width: 90%;
+    }
+}
+
 @media (max-width: 320px) {
   .headerTextContainer {
     display: flex;
     flex-direction: column;
+    width: 90%;
   }
 
   .textContainer {
     width: 100%;
+  }
+
+  .formWrapper {
+    width: 90%;
+  }
+
+  .borderWrapper {
+    width: 90%;
+  }
+
+  .wrapper {
+    width: 90%;
+  }
+
+  .burnHeaderContainer {
+    width: 90%;
+  }
+  
+  .postedEntry {
+    width: 90%;
+  }
+
+  textarea {
+    width: 90%;
   }
 }
 

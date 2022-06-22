@@ -3,15 +3,12 @@ import firebase from './firebase';
 import { useEffect, useState, useRef } from 'react';
 import { getDatabase, ref, onValue, push, remove } from 'firebase/database';
 import LoggedEntries from './LoggedEntries';
-// import Birds from './assets/birds.mp3';
 
 function App() {
   const [entry, setEntry] = useState([]);
   const [userEntry, setUserEntry] = useState("");
   const scrollToEntry = useRef();
 
-  
-  
   useEffect(() => {
     const database = getDatabase(firebase)
     const dbRef = ref(database)
@@ -36,9 +33,10 @@ function App() {
       event.preventDefault();
       const database = getDatabase(firebase)
       const dbRef = ref(database);
+      
       push(dbRef, userEntry);
-      scrollToEntry.current.scrollIntoView();
       setUserEntry("");
+      scrollToEntry.current.scrollIntoView({ behavior: 'smooth' })
     }
 
     const handleInputChange = (event) => {
@@ -86,7 +84,7 @@ function App() {
                 placeholder=""
                 id="newEntry"
                 onChange={ handleInputChange }
-                value={userEntry}
+                value={ userEntry }
                 >
                 </textarea>
             <div className="formButton">
