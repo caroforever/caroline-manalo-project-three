@@ -1,5 +1,3 @@
-
-
 const LoggedEntries = (props) => {
     return (
         <>
