@@ -200,7 +200,7 @@ h1 {
 }
 
 .enterText p {
-  margin: 0px 0px 20px 0px;
+  margin: 0px 0px 60px 0px;
 }
 
 .enterContainer {
@@ -420,9 +420,20 @@ footer {
       display: flex;
       flex-direction: column;
     }
+
   
     .textContainer {
       width: 100%;
+    }
+}
+
+@media (max-width: 800px) {
+  .landingPageHeader {
+      width: 70%;
+    }
+  
+    .headerPageWrapper2 {
+      width: 70%;
     }
 }
 
@@ -433,6 +444,30 @@ footer {
       width: 90%;
     }
   
+    .landingPageHeader {
+      width: 90%;
+    }
+
+    .headerPageWrapper2 {
+      width: 100%;
+    }
+
+    .landingPageWrapper {
+      display: none;
+    }
+
+    .enter {
+      width: 90%;
+    }
+
+    .enterText {
+      font-size: 2rem;
+    }
+    
+    footer {
+      width: 90%;
+    }
+
     .textContainer {
       width: 100%;
     }
@@ -469,6 +504,26 @@ footer {
     width: 90%;
   }
 
+  .landingPageHeader {
+    width: 90%;
+  }
+
+  .headerPageWrapper2 {
+    width: 100%;
+  }
+
+  .landingPageWrapper {
+    display: none;
+  }
+
+  .enter {
+    width: 90%;
+  }
+
+  .enterText {
+    font-size: 2rem;
+  }
+
   .textContainer {
     width: 100%;
   }
@@ -494,6 +549,9 @@ footer {
   }
 
   textarea {
+    width: 90%;
+  }
+  footer {
     width: 90%;
   }
 }

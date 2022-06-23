@@ -39,6 +39,8 @@ const Form = () => {
             setUserEntry("");
             scrollToEntry.current.scrollIntoView()
 
+            
+
             if (scrollToEntry !== "undefined") {
             }
         }

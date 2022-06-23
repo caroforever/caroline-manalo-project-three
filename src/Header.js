@@ -13,7 +13,7 @@ const Header = () => {
             <div className="headerPageWrapper2">
                 <div className="mainHeader">
                 <h1>
-                    <span className="headerSpan1">What's</span>
+                    <span className="headerSpan1">What are</span>
                     <span className="headerSpan2"> "morning</span>
                     <span className="headerSpan3"> pages"?</span>
                 </h1>
@@ -22,7 +22,7 @@ const Header = () => {
             </header>
             <div className="headerTextContainer">
                     <div className="textContainer">
-                        <p>An adaptation of a writing exercise from “The Artist’s Way” by Julia Cameron.</p> 
+                        <p>This is an adaptation of a writing exercise from “The Artist’s Way” by Julia Cameron.</p> 
                     </div>
                     <div className="textContainer">
                         <p> Every morning, write out an unfiltered stream of consciousness in the text box below.</p>
